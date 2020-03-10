@@ -1,19 +1,19 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-        imagemin: {                               
+        sprite: {                               
           files: {
-                    expand: true,
-          src: ['images/*.{png,jpg,gif}'],
-                                 dest: 'dist/'
+            src: ['images/*.gruntpng'],
+            dest: 'dist/bundle.png',
+            destCss:'dist/sprite.css'
                                        
           }
               }
                 
   });
 
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-spritesmith');
 
-      grunt.registerTask('default', ['imagemin']);    
+      grunt.registerTask('default', ['sprite']);    
 
 };
 
